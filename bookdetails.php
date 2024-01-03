@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>SIGN UP HERE</title>
+    <title>ENTER DETAILS HERE</title>
 </head>
 
 <body>
@@ -34,7 +34,9 @@
             <tr>
                 <th colspan="2"><input type="submit"></th>
             </tr>
-
+            <tr>
+                <th colspan="2"><a href="display.php">display</a></th>
+            </tr>
         </table>
 
 </body>
@@ -48,9 +50,11 @@ $sq="INSERT INTO `book`(`bookid`, `bookname`, `author`, `noofcopies`) VALUES ('$
 $qr=mysqli_query($conn,$sq);
 if($qr)
 {
- 	echo "<script> alert('succesfully inserted 1 row');
-	   </script>";    
+    echo "<script> alert('succesfully inserted 1 row');
+    </script>";    
 }
 else echo"<script> alert('error');
-	 </script>";
+</script>";
+
+
 ?>
