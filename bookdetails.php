@@ -44,18 +44,13 @@ $bid=$_POST["bid"];
 $ncpy=$_POST["ncpy"];
 $aname=$_POST["aname"];
 $bname=$_POST["bname"];
-if($p==$repass)
+$sq="INSERT INTO `book`(`bookid`, `bookname`, `author`, `noofcopies`) VALUES ('$bid','$bname','$aname','$ncpy')";
+$qr=mysqli_query($conn,$sq);
+if($qr)
 {
-    $sq="INSERT INTO `book`(`bookid`, `bookname`, `author`, `noofcopies`) VALUES ('$bid','$bname','$aname','$ncpy')";
-    $qr=mysqli_query($conn,$sq);
-    if($qr)
-    {
- 	    echo "<script> alert('succesfully inserted 1 row');
-	    </script>";    
-    }
-    else echo"<script> alert('error');
-	 </script>";
+ 	echo "<script> alert('succesfully inserted 1 row');
+	   </script>";    
 }
-else echo"<script> alert('Password didnt match');
-</script>";
+else echo"<script> alert('error');
+	 </script>";
 ?>
